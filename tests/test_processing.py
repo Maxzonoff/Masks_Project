@@ -1,7 +1,5 @@
 from src.processing import filter_by_state, sort_by_date
 
-from .fixtures import list_dicts, list_dicts_date
-
 
 def test_filter_by_state_default_state(list_dicts):
     assert filter_by_state(list_dicts) == [

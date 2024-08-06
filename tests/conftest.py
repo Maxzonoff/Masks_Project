@@ -11,7 +11,7 @@ def list_dicts_date():
     ]
 
 
-@pytest.fixture()
+@pytest.fixture
 def list_dicts():
     return [
         {},
@@ -23,7 +23,7 @@ def list_dicts():
     ]
 
 
-@pytest.fixture()
+@pytest.fixture
 def transaction():
     return [
         {

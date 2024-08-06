@@ -1,19 +1,28 @@
-def filter_by_currency(transactions: list[dict], currency_code: str):
+from collections.abc import Generator
+from typing import Any, Iterator
+
+
+def filter_by_currency(
+    transactions: list[dict[str, Any]], currency_code: str
+) -> Generator[dict[str, Any], None, None]:
     """Фильтрация транзакций по валюте."""
+
     for transaction in transactions:
         transaction_currency_code = transaction["operationAmount"]["currency"]["code"]
         if transaction_currency_code == currency_code:
             yield transaction
 
 
-def transaction_descriptions(transactions: list[dict]):
+def transaction_descriptions(transactions: list[dict[str, Any]]) -> Iterator[str]:
     """Фильтрация по описанию транзакции."""
+
     for transaction in transactions:
         yield transaction["description"]
 
 
-def card_number_generator(start: int, stop: int):
+def card_number_generator(start: int, stop: int) -> Generator[str, None, None]:
     """Генерирует номера банковских карт в формате XXXX XXXX XXXX XXXX, где X — цифра номера карты."""
+
     if start < 0 or start > 9999_9999_9999_9999:
         raise ValueError("Старт должен быть в диапазоне от 0 до 9999_9999_9999_9999")
     if stop < 0 or stop > 9999_9999_9999_9999:

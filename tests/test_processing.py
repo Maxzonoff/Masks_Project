@@ -1,5 +1,4 @@
 from src.processing import filter_by_state, sort_by_date
-from .fixtures import list_dicts_date, list_dicts
 
 
 def test_filter_by_state_default_state(list_dicts):

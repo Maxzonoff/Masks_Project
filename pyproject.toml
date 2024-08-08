@@ -33,7 +33,7 @@ warn_return_any = true
 check_untyped_defs = true
 strict = true
 warn_unreachable = true
-exclude = 'venv'
+exclude = ['venv', 'tests']
 
 
 [tool.black]

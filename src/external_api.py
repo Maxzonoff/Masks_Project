@@ -27,13 +27,10 @@ def get_transaction_amount(transaction: dict) -> float:
         response = requests.get(url, headers=headers)
         status_code = response.status_code
         if status_code != 200:
-            raise Exception("Ошибка сервера")
+            raise Exception(f"Ошибка сервера: {status_code}")
+
         try:
-            result = response.json()
-        except json.JSONDecodeError:
-            raise Exception("Некорректные данные")
-        try:
-            return result["result"]
+            return response.json()["result"]
         except KeyError:
             raise Exception("Отсутствует result")
 

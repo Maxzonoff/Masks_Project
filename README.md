@@ -25,6 +25,8 @@ pyproject.toml
 4. В файле generators.py функции фильтрации 
 по валюте, описанию и функция генерации номеров карт.
 
+5. В файле decorators.py функции 
+
 
 **Тестирование:**
 
@@ -35,3 +37,5 @@ pyproject.toml
 3. Произведено тестирование в test_processing.py для модуля processing.py.
 
 4. Произведено тестирование в test_generators.py для модуля generators.py
+
+5. Произведено тестирование в test_decorators.py для модуля decorators.py

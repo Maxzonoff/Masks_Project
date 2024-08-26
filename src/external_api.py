@@ -1,11 +1,10 @@
 import os
-import json
 
 import requests
 from dotenv import load_dotenv
 
 
-def get_transaction_amount(transaction: dict) -> float:
+def get_transaction_amount(transaction: dict[str, any]) -> float:
     """Функция, обращается к API для получения курса."""
     load_dotenv()
 

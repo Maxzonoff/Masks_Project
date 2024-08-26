@@ -1,44 +1,23 @@
-from unittest import mock
 from unittest.mock import patch
 
-from src.external_api import get_transaction_amount
-
 import pytest
+
+from src.external_api import get_transaction_amount
 
 
 @pytest.fixture()
 def usd_transaction():
-    return {
-        "operationAmount": {
-            "amount": "8221.37",
-            "currency": {
-                "code": "USD"
-            }
-        }
-    }
+    return {"operationAmount": {"amount": "8221.37", "currency": {"code": "USD"}}}
 
 
 @pytest.fixture()
 def rub_transaction():
-    return {
-        "operationAmount": {
-            "amount": "8221.37",
-            "currency": {
-                "code": "RUB"
-            }
-        }
-    }
+    return {"operationAmount": {"amount": "8221.37", "currency": {"code": "RUB"}}}
 
 
 @pytest.fixture()
 def transaction_without_amount():
-    return {
-        "operationAmount": {
-            "currency": {
-                "code": "RUB"
-            }
-        }
-    }
+    return {"operationAmount": {"currency": {"code": "RUB"}}}
 
 
 @pytest.fixture()
@@ -52,14 +31,7 @@ def transaction_without_currency():
 
 @pytest.fixture()
 def unknown_currency_transaction():
-    return {
-        "operationAmount": {
-            "amount": "8221.37",
-            "currency": {
-                "code": "GBR"
-            }
-        }
-    }
+    return {"operationAmount": {"amount": "8221.37", "currency": {"code": "GBR"}}}
 
 
 def test_get_transaction_amount_bad_code(usd_transaction):

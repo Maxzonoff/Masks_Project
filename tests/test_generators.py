@@ -2,11 +2,7 @@ from collections.abc import Generator
 
 import pytest
 
-from src.generators import (
-    card_number_generator,
-    filter_by_currency,
-    transaction_descriptions,
-)
+from src.generators import card_number_generator, filter_by_currency, transaction_descriptions
 
 
 def test_filter_by_currency(transaction):
@@ -20,8 +16,7 @@ def test_filter_by_currency(transaction):
     "transactions,expected_descriptions",
     [
         (transac, desc)
-        for transac, desc
-        in zip(
+        for transac, desc in zip(
             [
                 {
                     "id": 939719570,
@@ -55,15 +50,15 @@ def test_filter_by_currency(transaction):
                 "Перевод организации",
                 "Перевод со счета на счет",
                 "Перевод со счета на счет",
-            ]
+            ],
         )
-    ]
+    ],
 )
 def test_transaction_descriptions(transactions, expected_descriptions):
     assert next(transaction_descriptions([transactions])) == expected_descriptions
 
 
-@pytest.mark.parametrize("start", [-1, 10 ** 17])
+@pytest.mark.parametrize("start", [-1, 10**17])
 def test_card_number_generator_invalid_start(start):
     with pytest.raises(ValueError):
         next(card_number_generator(start, 9999_9999_9999_9999))

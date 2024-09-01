@@ -11,7 +11,7 @@ handler.setFormatter(formatter)
 
 
 def get_operations_info(file_path: str) -> list[typing.Any]:
-    """Функция принимающая путь до файла и возвращающая python объект"""
+    """Функция принимающая путь до файла и возвращающая python объект. """
     try:
         with open(file_path) as f:
             data_info = json.load(f)

@@ -1,10 +1,11 @@
 import os
+import typing
 
 import requests
 from dotenv import load_dotenv
 
 
-def get_transaction_amount(transaction: dict[str, any]) -> float:
+def get_transaction_amount(transaction: dict[str, typing.Any]) -> float:
     """Функция, обращается к API для получения курса."""
     load_dotenv()
 
@@ -19,7 +20,7 @@ def get_transaction_amount(transaction: dict[str, any]) -> float:
         raise ValueError("Не найден operationAmount.currency.code")
 
     if currency == "RUB":
-        return amount
+        return float(amount)
     if currency in ["USD", "EUR"]:
         url = f"https://api.apilayer.com/exchangerates_data/convert?to=RUB&from={currency}&amount={amount}"
         headers = {"apikey": os.getenv("API_KEY")}
@@ -29,7 +30,7 @@ def get_transaction_amount(transaction: dict[str, any]) -> float:
             raise Exception(f"Ошибка сервера: {status_code}")
 
         try:
-            return response.json()["result"]
+            return float(response.json()["result"])
         except KeyError:
             raise Exception("Отсутствует result")
 

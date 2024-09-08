@@ -29,30 +29,34 @@ pyproject.toml
 начало и конец работы программы.
 
 6. В файле utils.py функция принимающая путь до файла 
-и возвращающая python объект. Создан логер.
+и возвращающая python объект. Создан логер. Уровень INFO.
 
 7. В файле external_api.py функция, обращается к API для получения курса.
+
+8. В файле file_readers.py функции чтения файлов CSV и EXCEL.
 
 
 
 
 **Тестирование:**
 
-1. Произведено тестирование в test_masks.py для модуля masks.py
+1. Произведено тестирование в test_masks.py для модуля masks.py.
 
-2. Произведено тестирование в test_widget.py для модуля widget.py
+2. Произведено тестирование в test_widget.py для модуля widget.py.
 
 3. Произведено тестирование в test_processing.py для модуля processing.py.
 
-4. Произведено тестирование в test_generators.py для модуля generators.py
+4. Произведено тестирование в test_generators.py для модуля generators.py.
 
-5. Произведено тестирование в test_decorators.py для модуля decorators.py
+5. Произведено тестирование в test_decorators.py для модуля decorators.py.
 
-6. Произведено тестирование в test_utils.py для модуля utils.py
+6. Произведено тестирование в test_utils.py для модуля utils.py.
 
-7. Произведено тестирование в test_external_api.py для модуля external_api.py
+7. Произведено тестирование в test_external_api.py для модуля external_api.py.
 
-В файле conftest.py все фикстуры.
-В папке data json файлы.
+8. Произведено тестирование в test_file_readers.py для модуля file_readers.py.
+
+В файле conftest.py фикстуры.
+В папке data json, csv, excel файлы.
 В папке logs логи.
-В папке test_files файлы json для тестирования.
+В папке test_files файлы json, csv, excel для тестирования.

@@ -1,6 +1,35 @@
 import pytest
 
 
+@pytest.fixture()
+def usd_transaction():
+    return {"operationAmount": {"amount": "8221.37", "currency": {"code": "USD"}}}
+
+
+@pytest.fixture()
+def rub_transaction():
+    return {"operationAmount": {"amount": "8221.37", "currency": {"code": "RUB"}}}
+
+
+@pytest.fixture()
+def transaction_without_amount():
+    return {"operationAmount": {"currency": {"code": "RUB"}}}
+
+
+@pytest.fixture()
+def transaction_without_currency():
+    return {
+        "operationAmount": {
+            "amount": "8221.37",
+        }
+    }
+
+
+@pytest.fixture()
+def unknown_currency_transaction():
+    return {"operationAmount": {"amount": "8221.37", "currency": {"code": "GBR"}}}
+
+
 @pytest.fixture
 def list_dicts_date():
     return [

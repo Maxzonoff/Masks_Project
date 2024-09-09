@@ -5,35 +5,6 @@ import pytest
 from src.external_api import get_transaction_amount
 
 
-@pytest.fixture()
-def usd_transaction():
-    return {"operationAmount": {"amount": "8221.37", "currency": {"code": "USD"}}}
-
-
-@pytest.fixture()
-def rub_transaction():
-    return {"operationAmount": {"amount": "8221.37", "currency": {"code": "RUB"}}}
-
-
-@pytest.fixture()
-def transaction_without_amount():
-    return {"operationAmount": {"currency": {"code": "RUB"}}}
-
-
-@pytest.fixture()
-def transaction_without_currency():
-    return {
-        "operationAmount": {
-            "amount": "8221.37",
-        }
-    }
-
-
-@pytest.fixture()
-def unknown_currency_transaction():
-    return {"operationAmount": {"amount": "8221.37", "currency": {"code": "GBR"}}}
-
-
 def test_get_transaction_amount_bad_code(usd_transaction):
     with patch("requests.get") as mock_get:
         mock_get.return_value.status_code = 500

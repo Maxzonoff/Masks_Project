@@ -13,8 +13,8 @@ def test_get_json_empty():
 
 
 def test_get_operations_info_bad_file():
-    assert get_operations_info('tests/test_files/bad.json') == []
+    assert get_operations_info("tests/test_files/bad.json") == []
 
 
 def test_get_operations_info_not_list():
-    assert get_operations_info('tests/test_files/not_list.json') == []
+    assert get_operations_info("tests/test_files/not_list.json") == []

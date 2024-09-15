@@ -27,3 +27,4 @@ def get_operations_info(file_path: str) -> list[typing.Any]:
         return []
     logger.info("Файл загружен")
     return data_info
+

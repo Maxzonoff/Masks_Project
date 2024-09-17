@@ -1,4 +1,4 @@
-from src.filters import filter_by_description, count_by_category
+from src.filters import count_by_category, filter_by_description
 
 
 def test_filter_by_description_empty():
@@ -92,5 +92,5 @@ def test_count_by_category_ok(transaction):
     assert count_by_category(transaction, categories) == {
         "Перевод организации": 2,
         "Перевод со счета на счет": 2,
-        "Перевод с карты на карту": 1
+        "Перевод с карты на карту": 1,
     }

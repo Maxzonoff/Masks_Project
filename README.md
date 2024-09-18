@@ -12,6 +12,8 @@ pyproject.toml
 
 **Программа:**
 
+***main(): Функция для использования приложения.***
+
 1. В файле masks.py функции маскировки номеров
    карты и счета. Создан логер.
 
@@ -35,6 +37,8 @@ pyproject.toml
 
 8. В файле file_readers.py функции чтения файлов CSV и EXCEL.
 
+9. В файле filters.py функция поиска в описании и функция для подсчета описаний.
+
 
 
 
@@ -55,6 +59,8 @@ pyproject.toml
 7. Произведено тестирование в test_external_api.py для модуля external_api.py.
 
 8. Произведено тестирование в test_file_readers.py для модуля file_readers.py.
+
+9. Произведено тестирование в test_filters.py для модуля filters.py.
 
 В файле conftest.py фикстуры.
 В папке data json, csv, excel файлы.
